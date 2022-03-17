@@ -1,5 +1,5 @@
 CC = gcc
-CFLAG = -g
+CFLAG = -g -I -std=c99 -std=gnu99 -D_SVID_SOURCE -D_POSIX_C_SOURCE
 
 all: parent child
 
@@ -13,4 +13,5 @@ child: child.o
 	$(CC) $(CFLAG) $< -o $@ -lm
 
 clean:
-	rm -f *.o parent child
+	rm -f *.o parent child cstest logfile.*
+

@@ -1,10 +1,26 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <signal.h>
-#include <sys/ipc.h>
-#include <sys/types.h>
-#include <unistd.h>
+#ifndef CONFIG_H
+#define CONFIG_H
+
 #include <math.h>
+#include <time.h>
+#include <errno.h> 
+#include <stdio.h>
+#include <string.h>
+#include <getopt.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/shm.h>
+#include <sys/sem.h>
+#include <sys/ipc.h>
 #include <stdbool.h>
-#include <errno.h>
+#include <sys/wait.h>
+
+void postSemaphore();
+void waitSemaphore();
+void cleanChild();
+void outOfTime();
+void ctrlC();
+
+
+#endif
